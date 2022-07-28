@@ -8,10 +8,12 @@ function SideNav() {
 
 	function useDrawer() {
 		const sideNav = document.getElementById("sidenav");
+		const brand = document.getElementById("brand");
 		const resizeButton = document.querySelector("#sidenav button");
 
 		sideNav.classList.toggle("mini");
 		resizeButton.classList.toggle("closed");
+		brand.classList.toggle("icon");
 		setIsOpen(!isOpen);
 	}
 
@@ -22,7 +24,12 @@ function SideNav() {
 					<FiArrowRightCircle id='drawer-button-icon' />
 				</button>
 				<div className='branding'>
-					<img id='logo' src={isOpen ? logo : icon} alt='Focus logo' />
+					<img
+						id='brand'
+						className='brand'
+						src={isOpen ? logo : icon}
+						alt='Focus logo'
+					/>
 				</div>
 				<div className='main-menu'>
 					<a

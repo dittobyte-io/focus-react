@@ -49,7 +49,6 @@
   border-radius: 50%;
   box-shadow: 1px 2px 4px 1px;
   background-color: white;
-  color: slategrey;
   height: 1.5rem;
   width: 1.5rem;
   padding: 0;
@@ -63,4 +62,26 @@
 
 #drawer-button-icon {
   margin-bottom: 2px;
+  color: slategrey;
+}
+
+//branding area
+.branding {
+  min-height: 4rem;
+  width: 100%;
+  background-color: #1f2b5c;
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.brand {
+  height: 2.5rem;
+  align-self: center;
+  margin: -.25rem 0 0 0;
+  transition: .5s;
+
+  &.icon {
+    margin: -.25rem 0 0 .25rem;
+  }
 }
