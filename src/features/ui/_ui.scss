@@ -38,3 +38,29 @@
   margin: 0;
   background-color: aliceblue;
 }
+
+//drawer
+.drawer-button {
+  position: absolute;
+  top: 3.5rem;
+  right: -.8rem;
+  transform: rotate(0deg);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px 1px;
+  background-color: white;
+  color: slategrey;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  transition: .5s;
+
+  &.closed {
+    transform: rotate(180deg);
+    box-shadow: -1px -2px 4px 1px;
+  }
+}
+
+#drawer-button-icon {
+  margin-bottom: 2px;
+}

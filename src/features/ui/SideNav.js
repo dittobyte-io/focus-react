@@ -1,13 +1,14 @@
 import { useState } from "react";
 import logo from "features/ui/logo-hz-white.svg";
 import icon from "features/ui/icon-white.svg";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 function SideNav() {
 	const [isOpen, setIsOpen] = useState(true);
 
 	function useDrawer() {
 		const sideNav = document.getElementById("sidenav");
-		const resizeButton = document.querySelector("#resize button");
+		const resizeButton = document.querySelector("#sidenav button");
 
 		sideNav.classList.toggle("mini");
 		resizeButton.classList.toggle("closed");
@@ -17,6 +18,9 @@ function SideNav() {
 	return (
 		<>
 			<div id='sidenav' className='sidenav'>
+				<button className='drawer-button' onClick={useDrawer}>
+					<FiArrowRightCircle id='drawer-button-icon' />
+				</button>
 				<div className='branding'>
 					<img id='logo' src={isOpen ? logo : icon} alt='Focus logo' />
 				</div>
@@ -51,11 +55,6 @@ function SideNav() {
 					>
 						<span>File&nbsp;Manager</span>
 					</a>
-				</div>
-				<div id='resize'>
-					<button className='btn btn-secondary' onClick={useDrawer}>
-						click
-					</button>
 				</div>
 			</div>
 		</>
