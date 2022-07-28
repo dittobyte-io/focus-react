@@ -1,0 +1,37 @@
+.grid-container {
+  display: grid;
+  grid: "sidenav header" 4rem "sidenav body" 1fr/min-content 1fr;
+  min-height: 100vh;
+}
+
+.side-nav {
+  grid-area: sidenav;
+  margin: 0;
+  width: 12rem;
+  transition: 0.5s;
+  background-color: #5784bb;
+}
+
+.side-nav.mini {
+  width: 12rem;
+  transition: 0.5s;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.body {
+  grid-area: body;
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+  background-color: aliceblue;
+}
+
+/*# sourceMappingURL=app.css.map */

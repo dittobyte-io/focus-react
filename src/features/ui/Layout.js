@@ -1,8 +1,17 @@
-function Layout() {
+import { SideNav } from "features/ui";
+import { Header } from "features/ui";
+
+function Layout({ children }) {
 	return (
-		<div>
-			<h1>Layout</h1>
-		</div>
+		<main className='grid-container' id='layout'>
+			<section className='side-nav'>
+				<SideNav />
+			</section>
+			<section className='header'>
+				<Header />
+			</section>
+			<section className='body'>{children}</section>
+		</main>
 	);
 }
 
