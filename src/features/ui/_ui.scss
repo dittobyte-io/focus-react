@@ -8,17 +8,17 @@
   min-height: 100vh;
 }
 
-.side-nav {
+.sidenav {
   grid-area: sidenav;
   margin: 0;
   width: 12rem;
+  min-height: 100vh;
   transition: .5s;
   background-color: #5784bb;
-}
 
-.side-nav.mini {
-  width: 12rem;
-  transition: .5s;
+  &.mini {
+    width: 5rem;
+  }
 }
 
 .header {
