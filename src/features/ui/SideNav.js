@@ -13,15 +13,9 @@ import {
 function SideNav() {
 	const [isOpen, setIsOpen] = useState(true);
 
-	function useDrawer() {
-		const sideNav = document.getElementById("sidenav");
-		const brand = document.getElementById("brand");
-		const resizeButton = document.querySelector("#sidenav button");
+	function toggleDrawer() {
 		const linktext = document.querySelectorAll("#sidenav a span");
 
-		sideNav.classList.toggle("mini");
-		resizeButton.classList.toggle("closed");
-		brand.classList.toggle("icon");
 		linktext.forEach((linktext) => {
 			linktext.classList.toggle("mini");
 		});
@@ -30,14 +24,17 @@ function SideNav() {
 
 	return (
 		<>
-			<div id='sidenav' className='sidenav'>
-				<button className='drawer-button' onClick={useDrawer}>
+			<div id='sidenav' className={isOpen ? "sidenav" : "sidenav mini"}>
+				<button
+					className={isOpen ? "drawer-button" : "drawer-button closed"}
+					onClick={toggleDrawer}
+				>
 					<FiArrowRightCircle id='drawer-button-icon' />
 				</button>
 				<div className='branding'>
 					<img
 						id='brand'
-						className='brand'
+						className={isOpen ? "brand" : "brand icon"}
 						src={isOpen ? logo : icon}
 						alt='Focus logo'
 					/>
