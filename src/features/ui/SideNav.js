@@ -1,5 +1,6 @@
 import logo from "features/ui/logo-hz-white.svg";
 import icon from "features/ui/icon-white.svg";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {
@@ -40,51 +41,36 @@ function SideNav() {
 					/>
 				</div>
 				<div className='main-menu'>
-					<a
-						href='https://www.bbc.co.uk/programmes/b006q2x0'
-						className='d-flex align-items-baseline'
-					>
+					<Link to='/' className='d-flex align-items-baseline'>
 						<i>
 							<BsSpeedometer />
 						</i>
 						<span>Dashboard</span>
-					</a>
-					<a
-						href='https://www.bbc.co.uk/programmes/b006q2x0'
-						className='d-flex align-items-baseline'
-					>
+					</Link>
+					<Link to='/projects' className='d-flex align-items-baseline'>
 						<i>
 							<BsBriefcase />
 						</i>
 						<span>Projects</span>
-					</a>
-					<a
-						href='https://www.bbc.co.uk/programmes/b006q2x0'
-						className='d-flex align-items-baseline'
-					>
+					</Link>
+					<Link to='/tasks' className='d-flex align-items-baseline'>
 						<i>
 							<BsListCheck />
 						</i>
 						<span>Tasks</span>
-					</a>
-					<a
-						href='https://www.bbc.co.uk/programmes/b006q2x0'
-						className='d-flex align-items-baseline'
-					>
+					</Link>
+					<Link to='/calendar' className='d-flex align-items-baseline'>
 						<i>
 							<BsCalendarWeek />
 						</i>
 						<span>Calendar</span>
-					</a>
-					<a
-						href='https://www.bbc.co.uk/programmes/b006q2x0'
-						className='d-flex align-items-baseline'
-					>
+					</Link>
+					<Link to='file-manager' className='d-flex align-items-baseline'>
 						<i>
 							<BsFolder />
 						</i>
 						<span>File&nbsp;Manager</span>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</>
