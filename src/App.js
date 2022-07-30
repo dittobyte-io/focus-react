@@ -1,10 +1,19 @@
 import "./app.css";
-import Dashboard from "pages/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Calendar, Dashboard, Projects, Tasks, FileManager } from "pages";
 
 function App() {
 	return (
 		<div className='App'>
-			<Dashboard />
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Dashboard />} />
+					<Route path='/projects' element={<Projects />} />
+					<Route path='/tasks' element={<Tasks />} />
+					<Route path='/calendar' element={<Calendar />} />
+					<Route path='/file-manager' element={<FileManager />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 }
