@@ -6,38 +6,6 @@
 
 .sidenav {
   grid-area: sidenav;
-  position: relative;
-  margin: 0;
-  width: 12rem;
-  min-height: 100vh;
-  transition: 0.5s;
-  background-color: #5784bb;
-  color: white;
-}
-.sidenav.mini {
-  width: 4rem;
-  transition: 0.5s;
-}
-.sidenav a {
-  color: inherit;
-  padding: 0.5rem 1.375rem;
-}
-.sidenav a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.sidenav a i {
-  font-size: 1.25rem;
-}
-.sidenav a span {
-  font-size: 1rem;
-  margin-left: 1rem;
-  opacity: 1;
-  transition: 0.5s;
-}
-.sidenav a span.mini {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .header {
@@ -55,6 +23,41 @@
   padding: 1rem;
   margin: 0;
   background-color: aliceblue;
+}
+
+.drawer {
+  position: relative;
+  margin: 0;
+  width: 12rem;
+  min-height: 100vh;
+  transition: 0.5s;
+  background-color: #5784bb;
+  color: white;
+}
+.drawer.mini {
+  width: 4rem;
+  transition: 0.5s;
+}
+.drawer a {
+  color: inherit;
+  padding: 0.5rem 1.375rem;
+}
+.drawer a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.drawer a i {
+  font-size: 1.25rem;
+}
+.drawer a span {
+  font-size: 1rem;
+  margin-left: 1rem;
+  opacity: 1;
+  transition: 0.5s;
+}
+.drawer a span.mini {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .drawer-button {

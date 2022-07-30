@@ -10,6 +10,27 @@
 
 .sidenav {
   grid-area: sidenav;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.body {
+  grid-area: body;
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+  background-color: aliceblue;
+}
+
+//drawer
+.drawer {
   position: relative;
   margin: 0;
   width: 12rem;
@@ -47,24 +68,6 @@
   }
 }
 
-.header {
-  grid-area: header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  margin: 0;
-}
-
-.body {
-  grid-area: body;
-  display: flex;
-  padding: 1rem;
-  margin: 0;
-  background-color: aliceblue;
-}
-
-//drawer
 .drawer-button {
   position: absolute;
   top: 3.5rem;

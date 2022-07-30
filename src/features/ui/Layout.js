@@ -4,7 +4,7 @@ import { Header } from "features/ui";
 function Layout({ children }) {
 	return (
 		<main className='grid-container' id='layout'>
-			<section className='side-nav'>
+			<section className='sidenav'>
 				<SideNav />
 			</section>
 			<section className='header'>

@@ -15,7 +15,7 @@ function SideNav() {
 	const [isOpen, setIsOpen] = useState(true);
 
 	function toggleDrawer() {
-		const linkText = document.querySelectorAll("#sidenav a span");
+		const linkText = document.querySelectorAll("#drawer a span");
 
 		linkText.forEach((linkText) => {
 			linkText.classList.toggle("mini");
@@ -25,7 +25,7 @@ function SideNav() {
 
 	return (
 		<>
-			<div id='sidenav' className={isOpen ? "sidenav" : "sidenav mini"}>
+			<div id='drawer' className={isOpen ? "drawer" : "drawer mini"}>
 				<button
 					className={isOpen ? "drawer-button" : "drawer-button closed"}
 					onClick={toggleDrawer}
