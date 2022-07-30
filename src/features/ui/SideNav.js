@@ -65,7 +65,7 @@ function SideNav() {
 						</i>
 						<span>Calendar</span>
 					</Link>
-					<Link to='file-manager' className='d-flex align-items-baseline'>
+					<Link to='/file-manager' className='d-flex align-items-baseline'>
 						<i>
 							<BsFolder />
 						</i>
