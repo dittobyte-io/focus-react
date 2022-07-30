@@ -35,7 +35,7 @@
   margin: 0;
   width: 12rem;
   min-height: 100vh;
-  transition: .5s;
+  transition: width .5s;
   background-color: #5784bb;
   color: white;
   &.mini {
@@ -44,9 +44,17 @@
   }
 
   & a {
+    display: flex;
+    align-items: baseline;
     color: inherit;
     padding: .5rem 1.375rem;
-    &:hover {
+    &.active {
+      background-color: #9ac8ea;
+      color: #1f2b5c;
+      cursor: default;
+      text-decoration: none;
+    }
+    &:not(.active):hover {
       color: inherit;
       text-decoration: none;
     }
@@ -59,7 +67,7 @@
       font-size: 1rem;
       margin-left: 1rem;
       opacity: 1;
-      transition: .5s;
+      transition: opacity .5s;
       &.mini {
         visibility: hidden;
         opacity: 0;

@@ -1,6 +1,6 @@
 import logo from "features/ui/logo-hz-white.svg";
 import icon from "features/ui/icon-white.svg";
-import { Link } from "react-router-dom";
+import { NavLink, activeClassName } from "react-router-dom";
 import { useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {
@@ -41,36 +41,36 @@ function SideNav() {
 					/>
 				</div>
 				<div className='main-menu'>
-					<Link to='/' className='d-flex align-items-baseline'>
+					<NavLink to='/'>
 						<i>
 							<BsSpeedometer />
 						</i>
 						<span>Dashboard</span>
-					</Link>
-					<Link to='/projects' className='d-flex align-items-baseline'>
+					</NavLink>
+					<NavLink to='/projects'>
 						<i>
 							<BsBriefcase />
 						</i>
 						<span>Projects</span>
-					</Link>
-					<Link to='/tasks' className='d-flex align-items-baseline'>
+					</NavLink>
+					<NavLink to='/tasks'>
 						<i>
 							<BsListCheck />
 						</i>
 						<span>Tasks</span>
-					</Link>
-					<Link to='/calendar' className='d-flex align-items-baseline'>
+					</NavLink>
+					<NavLink to='/calendar'>
 						<i>
 							<BsCalendarWeek />
 						</i>
 						<span>Calendar</span>
-					</Link>
-					<Link to='/file-manager' className='d-flex align-items-baseline'>
+					</NavLink>
+					<NavLink to='/file-manager'>
 						<i>
 							<BsFolder />
 						</i>
 						<span>File&nbsp;Manager</span>
-					</Link>
+					</NavLink>
 				</div>
 			</div>
 		</>
