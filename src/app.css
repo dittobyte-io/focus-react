@@ -32,9 +32,12 @@
 .sidenav a span {
   font-size: 1rem;
   margin-left: 1rem;
+  opacity: 1;
+  transition: 0.5s;
 }
 .sidenav a span.mini {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .header {
