@@ -1,6 +1,6 @@
-import { useState } from "react";
 import logo from "features/ui/logo-hz-white.svg";
 import icon from "features/ui/icon-white.svg";
+import { useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {
 	BsSpeedometer,
@@ -14,10 +14,10 @@ function SideNav() {
 	const [isOpen, setIsOpen] = useState(true);
 
 	function toggleDrawer() {
-		const linktext = document.querySelectorAll("#sidenav a span");
+		const linkText = document.querySelectorAll("#sidenav a span");
 
-		linktext.forEach((linktext) => {
-			linktext.classList.toggle("mini");
+		linkText.forEach((linkText) => {
+			linkText.classList.toggle("mini");
 		});
 		setIsOpen(!isOpen);
 	}
