@@ -15,11 +15,6 @@ function SideNav() {
 	const [isOpen, setIsOpen] = useState(true);
 
 	function toggleDrawer() {
-		const linkText = document.querySelectorAll("#drawer a span");
-
-		linkText.forEach((linkText) => {
-			linkText.classList.toggle("mini");
-		});
 		setIsOpen(!isOpen);
 	}
 
@@ -45,31 +40,31 @@ function SideNav() {
 						<i>
 							<BsSpeedometer />
 						</i>
-						<span>Dashboard</span>
+						<span className={!isOpen && "mini"}>Dashboard</span>
 					</NavLink>
 					<NavLink to='/projects'>
 						<i>
 							<BsBriefcase />
 						</i>
-						<span>Projects</span>
+						<span className={!isOpen && "mini"}>Projects</span>
 					</NavLink>
 					<NavLink to='/tasks'>
 						<i>
 							<BsListCheck />
 						</i>
-						<span>Tasks</span>
+						<span className={!isOpen && "mini"}>Tasks</span>
 					</NavLink>
 					<NavLink to='/calendar'>
 						<i>
 							<BsCalendarWeek />
 						</i>
-						<span>Calendar</span>
+						<span className={!isOpen && "mini"}>Calendar</span>
 					</NavLink>
 					<NavLink to='/file-manager'>
 						<i>
 							<BsFolder />
 						</i>
-						<span>File&nbsp;Manager</span>
+						<span className={!isOpen && "mini"}>File&nbsp;Manager</span>
 					</NavLink>
 				</div>
 			</div>
