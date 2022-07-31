@@ -1,6 +1,6 @@
 import logo from "features/ui/logo-hz-white.svg";
 import icon from "features/ui/icon-white.svg";
-import { NavLink, activeClassName } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {
