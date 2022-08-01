@@ -1,4 +1,4 @@
-import "./app.css";
+import "app/app.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
 	Calendar,
