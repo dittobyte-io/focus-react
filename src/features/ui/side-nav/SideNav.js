@@ -1,7 +1,8 @@
-import logo from "features/ui/logo-hz-white.svg";
-import icon from "features/ui/icon-white.svg";
+import logo from "features/ui/side-nav/logo-hz-white.svg";
+import icon from "features/ui/side-nav/icon-white.svg";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "features/ui/side-nav/drawerSlice";
 import { FiArrowRightCircle } from "react-icons/fi";
 import {
 	BsSpeedometer,
@@ -12,18 +13,15 @@ import {
 } from "react-icons/bs";
 
 function SideNav() {
-	const [isOpen, setIsOpen] = useState(true);
-
-	function toggleDrawer() {
-		setIsOpen(!isOpen);
-	}
+	const isOpen = useSelector((state) => state.drawer.position);
+	const dispatch = useDispatch();
 
 	return (
 		<>
 			<div id='drawer' className={isOpen ? "drawer" : "drawer mini"}>
 				<button
 					className={isOpen ? "drawer-button" : "drawer-button closed"}
-					onClick={toggleDrawer}
+					onClick={() => dispatch(toggle())}
 				>
 					<FiArrowRightCircle id='drawer-button-icon' />
 				</button>
@@ -40,31 +38,33 @@ function SideNav() {
 						<i>
 							<BsSpeedometer />
 						</i>
-						<span className={!isOpen && "mini"}>Dashboard</span>
+						<span className={isOpen ? undefined : "mini"}>Dashboard</span>
 					</NavLink>
 					<NavLink to='/projects'>
 						<i>
 							<BsBriefcase />
 						</i>
-						<span className={!isOpen && "mini"}>Projects</span>
+						<span className={isOpen ? undefined : "mini"}>Projects</span>
 					</NavLink>
 					<NavLink to='/tasks'>
 						<i>
 							<BsListCheck />
 						</i>
-						<span className={!isOpen && "mini"}>Tasks</span>
+						<span className={isOpen ? undefined : "mini"}>Tasks</span>
 					</NavLink>
 					<NavLink to='/calendar'>
 						<i>
 							<BsCalendarWeek />
 						</i>
-						<span className={!isOpen && "mini"}>Calendar</span>
+						<span className={isOpen ? undefined : "mini"}>Calendar</span>
 					</NavLink>
 					<NavLink to='/file-manager'>
 						<i>
 							<BsFolder />
 						</i>
-						<span className={!isOpen && "mini"}>File&nbsp;Manager</span>
+						<span className={isOpen ? undefined : "mini"}>
+							File&nbsp;Manager
+						</span>
 					</NavLink>
 				</div>
 			</div>
