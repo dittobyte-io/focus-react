@@ -4,14 +4,19 @@
 .idea/
 
 # dependencies
+node_modules
 frontend/node_modules
+/.pnp
 frontend/.pnp
+.pnp.js
 frontend/.pnp.js
 
 # testing
+/coverage
 frontend/coverage
 
 # production
+/build
 frontend/build
 
 # misc
