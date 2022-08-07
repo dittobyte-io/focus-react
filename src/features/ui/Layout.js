@@ -1,7 +1,8 @@
 import { SideNav } from "features/ui";
 import { Header } from "features/ui";
+import { Outlet } from "react-router-dom";
 
-function Layout({ children }) {
+function Layout() {
 	return (
 		<main className='grid-container' id='layout'>
 			<section className='sidenav'>
@@ -10,7 +11,9 @@ function Layout({ children }) {
 			<section className='header'>
 				<Header />
 			</section>
-			<section className='body'>{children}</section>
+			<section className='body'>
+				<Outlet />
+			</section>
 		</main>
 	);
 }
