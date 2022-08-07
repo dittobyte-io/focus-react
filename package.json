@@ -1,0 +1,33 @@
+{
+  "name": "focus-react",
+  "version": "2.0.0",
+  "description": "Organizational Performance Platform",
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
+  },
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "yarn --cwd frontend start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd frontend install && yarn --cwd frontend build"
+  },
+  "repository": "https://github.com/dittobyte-io/focus-react.git",
+  "author": "dittobyte.io",
+  "contributors": [
+    "jsnkle",
+    "spatil"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
