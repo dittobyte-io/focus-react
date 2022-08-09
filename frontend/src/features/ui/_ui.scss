@@ -124,4 +124,15 @@
 .header-toolbar{
   display: flex;
   width: min-content;
+  align-items: center;
+}
+
+//theme classes
+.btn-basic {
+  border: none;
+  background: transparent;
+}
+
+.small-dropdown > li {
+  font-size: small;
 }

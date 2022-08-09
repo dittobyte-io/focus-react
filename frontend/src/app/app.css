@@ -114,6 +114,28 @@
 .header-toolbar {
   display: flex;
   width: min-content;
+  align-items: center;
+}
+
+.btn-basic {
+  border: none;
+  background: transparent;
+}
+
+.small-dropdown > li {
+  font-size: small;
+}
+
+#profile-tool {
+  padding: 0 0.5rem;
+}
+
+.profile-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 19%;
+  border-radius: 50%;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=app.css.map */
