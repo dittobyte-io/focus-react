@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function UserProfileTool() {
 	return (
 		<>
@@ -11,15 +13,15 @@ function UserProfileTool() {
 				</button>
 				<ul className='dropdown-menu small-dropdown py-1'>
 					<li>
-						<a href='#' className='dropdown-item'>
+						<Link to='profile' className='dropdown-item'>
 							View Profile
-						</a>
+						</Link>
 					</li>
 					<hr className='dropdown-divider my-1 mx-2' />
 					<li>
-						<a href='#' className='dropdown-item'>
+						<Link to='logout' className='dropdown-item'>
 							Logout
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>

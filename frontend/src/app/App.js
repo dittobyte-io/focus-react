@@ -9,6 +9,7 @@ import {
 	FileManager,
 	Signup,
 	Login,
+	Profile,
 } from "pages";
 
 function App() {
@@ -20,10 +21,11 @@ function App() {
 					<Route path='/login' element={<Login />} />
 					<Route path='/' element={<Layout />}>
 						<Route index element={<Dashboard />} />
-						<Route path='/projects' element={<Projects />} />
-						<Route path='/tasks' element={<Tasks />} />
-						<Route path='/calendar' element={<Calendar />} />
-						<Route path='/file-manager' element={<FileManager />} />
+						<Route path='projects' element={<Projects />} />
+						<Route path='tasks' element={<Tasks />} />
+						<Route path='calendar' element={<Calendar />} />
+						<Route path='file-manager' element={<FileManager />} />
+						<Route path='profile' element={<Profile />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
