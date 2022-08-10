@@ -138,4 +138,24 @@
   color: #ffffff;
 }
 
+#notification-tool > svg {
+  font-size: 1.5rem;
+  color: #5784bb;
+}
+#notification-tool > .badge {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.1rem;
+}
+#notification-tool > .badge.single {
+  padding: 0.3em 0.6em;
+}
+#notification-tool > .badge.double {
+  padding: 0.35em;
+}
+#notification-tool .notification-text {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
 /*# sourceMappingURL=app.css.map */
