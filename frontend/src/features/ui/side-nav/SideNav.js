@@ -1,5 +1,5 @@
-import logo from "features/ui/side-nav/logo-hz-white.svg";
-import icon from "features/ui/side-nav/icon-white.svg";
+import logo from "features/ui/svgs/logo-hz-white.svg";
+import icon from "features/ui/svgs/icon-white.svg";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggle } from "features/ui/side-nav/drawerSlice";
