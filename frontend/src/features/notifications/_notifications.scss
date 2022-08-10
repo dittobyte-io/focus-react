@@ -1,0 +1,23 @@
+#notification-tool {
+  > svg {
+    font-size: 1.5rem;
+    color: #5784bb;
+  }
+
+  > .badge {
+    position: absolute;
+    top: .3rem;
+    left: .1rem;
+    &.single {
+      padding: .3em .6em;
+    }
+    &.double {
+      padding: .35em;
+    }
+  }
+
+  .notification-text {
+    font-size: .9em;
+    font-weight: 300;
+  }
+}

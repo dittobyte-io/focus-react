@@ -1,7 +1,15 @@
+import { SearchBar } from "features/search";
+import { NotificationTool } from "features/notifications";
+import { UserProfileTool } from "features/user-profile";
+
 function Header() {
 	return (
 		<>
-			<h1>Header</h1>
+			<SearchBar />
+			<aside className='header-toolbar'>
+				<NotificationTool />
+				<UserProfileTool />
+			</aside>
 		</>
 	);
 }

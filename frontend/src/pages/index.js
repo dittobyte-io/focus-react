@@ -5,5 +5,15 @@ import Projects from "pages/Projects";
 import Tasks from "pages/Tasks";
 import Calendar from "pages/Calendar";
 import FileManager from "pages/FileManager";
+import Profile from "pages/Profile";
 
-export { Signup, Login, Dashboard, Calendar, Tasks, Projects, FileManager };
+export {
+	Signup,
+	Login,
+	Dashboard,
+	Calendar,
+	Tasks,
+	Projects,
+	FileManager,
+	Profile,
+};

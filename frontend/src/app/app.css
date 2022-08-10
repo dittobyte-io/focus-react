@@ -111,4 +111,60 @@
   margin: -0.25rem 0 0 1.05rem;
 }
 
+.header-toolbar {
+  display: flex;
+  width: min-content;
+  align-items: center;
+}
+
+.btn-basic {
+  border: none;
+  background: transparent;
+}
+
+.small-dropdown > li {
+  font-size: small;
+}
+
+#profile-tool {
+  padding: 0 0.5rem;
+}
+
+.profile-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 19%;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+#notification-tool > svg {
+  font-size: 1.5rem;
+  color: #5784bb;
+}
+#notification-tool > .badge {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.1rem;
+}
+#notification-tool > .badge.single {
+  padding: 0.3em 0.6em;
+}
+#notification-tool > .badge.double {
+  padding: 0.35em;
+}
+#notification-tool .notification-text {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.header-search {
+  max-width: 20rem;
+  padding: 0 0.5rem;
+}
+
+.search-icon {
+  color: white;
+}
+
 /*# sourceMappingURL=app.css.map */
