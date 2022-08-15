@@ -4,15 +4,15 @@
   "description": "Organizational Performance Platform",
   "engines": {
     "node": "16.x",
-    "yarn": "1.x"
+    "npm": "8.x"
   },
   "main": "server/index.js",
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
-    "client": "yarn --cwd frontend start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd frontend install && yarn --cwd frontend build"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": "https://github.com/dittobyte-io/focus-react.git",
   "author": "dittobyte.io",
