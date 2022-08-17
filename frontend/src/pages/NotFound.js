@@ -7,7 +7,7 @@ function NotFound() {
 			<p className='display-5'>
 				The page you are looking for no longer exists.
 			</p>
-			<Link to='/' className='btn btn-primary' style={{ color: "white" }}>
+			<Link to='/' className='btn btn-primary mt-5' style={{ color: "white" }}>
 				Go back to Dashboard
 			</Link>
 		</div>
