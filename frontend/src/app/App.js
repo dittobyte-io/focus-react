@@ -27,6 +27,7 @@ function App() {
 						<Route path='file-manager' element={<FileManager />} />
 						<Route path='profile' element={<Profile />} />
 					</Route>
+					<Route path='/notfound' element={<Signup />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
