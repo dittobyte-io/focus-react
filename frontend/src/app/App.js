@@ -11,7 +11,6 @@ import {
 	Login,
 	Profile,
 } from "pages";
-import NotFound from "pages/NotFound";
 
 function App() {
 	return (
@@ -28,8 +27,6 @@ function App() {
 						<Route path='file-manager' element={<FileManager />} />
 						<Route path='profile' element={<Profile />} />
 					</Route>
-					{/*keep as last route*/}
-					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
