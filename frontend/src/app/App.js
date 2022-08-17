@@ -10,6 +10,7 @@ import {
 	Signup,
 	Login,
 	Profile,
+	NotFound,
 } from "pages";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
 						<Route path='file-manager' element={<FileManager />} />
 						<Route path='profile' element={<Profile />} />
 					</Route>
-					<Route path='/notfound' element={<Signup />} />
+					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
