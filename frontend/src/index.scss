@@ -22,7 +22,12 @@ $font-family-base: "Poppins";
 //bootstrap required stylesheets
 @import "../node_modules/bootstrap/scss/variables";
 
-//boostrap map overrides
+/* boostrap map overrides */
+  //add colors to theme
+$custom-colors: (
+  "tertiary": #1f2b5c
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 //bootstrap required parts
 @import "../node_modules/bootstrap/scss/maps";
