@@ -126,6 +126,14 @@
   font-size: small;
 }
 
+.notfound-wrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #profile-tool {
   padding: 0 0.5rem;
 }

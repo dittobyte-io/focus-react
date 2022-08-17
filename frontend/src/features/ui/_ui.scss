@@ -136,3 +136,11 @@
 .small-dropdown > li {
   font-size: small;
 }
+
+.notfound-wrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
