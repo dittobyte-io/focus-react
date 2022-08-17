@@ -136,17 +136,3 @@
 .small-dropdown > li {
   font-size: small;
 }
-
-//not found page
-.not-found-wrapper {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  > img {
-    max-width: 60%;
-    margin-bottom: 5rem;
-  }
-}
