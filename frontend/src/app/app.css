@@ -175,4 +175,21 @@
   color: white;
 }
 
+#login-box {
+  width: 30rem;
+}
+
+.card-logo {
+  margin: 1rem 0;
+  height: 3.75rem;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=app.css.map */
