@@ -80,3 +80,4 @@ function Auth() {
 }
 
 export default Auth;
+//TODO: Add RTK-Query and icon for show/hide password
