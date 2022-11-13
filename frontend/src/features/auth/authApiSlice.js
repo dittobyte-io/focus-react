@@ -15,4 +15,4 @@ const authApiSlice = apiSlice.injectEndpoints({
 	overrideExisting: false,
 });
 
-export const { useLoginUserMutation } = authApiSlice;
+export  const { useLoginUserMutation } = authApiSlice

@@ -1,19 +1,19 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-	baseUrl: "https://focus-platform-ag.herokuapp.com",
+	baseUrl: "https://focus-platform-ag.herokuapp.com", 
+	credentials: "include",
 	prepareHeaders: (headers, { getState }) => {
 		const token = getState().auth.token;
 		if (token) {
-			headers.set("Authorization", `Token ${token}`);
+			headers.set("authorization", `Bearer ${token}`);
 		}
 		return headers;
 	},
 });
 
-export const apiSlice  = createApi({
+export const apiSlice = createApi({
 	baseQuery: baseQuery,
-	endpoints: () => ({}),
+	tagTypes: [], //TODO: add tag tag types
+	endpoints: (builder) => ({}),
 });
-
-
