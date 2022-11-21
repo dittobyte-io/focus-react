@@ -12,13 +12,14 @@ function Login() {
 				backgroundSize: "cover",
 			}}
 		>
+			
 			<Auth />
 			<div className='text-center mt-3'>
 				<p className='text-white'>
 					Don't have an account?&nbsp;&nbsp;
-					<Link to='/signup' className='text-white'>
+					<b><Link to='/signup' className='text-white'>
 						Sign up
-					</Link>
+					</Link> </b>
 				</p>
 			</div>
 		</div>

@@ -1,13 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from "app/api/apiSlice";
+import { authApi } from "app/api/authApi";
 import drawerReducer from "features/ui/side-nav/drawerSlice";
+import  authReducer from "features/auth/authSlice";
+
 
 export const store = configureStore({
 	reducer: {
-		[apiSlice.reducerPath]: apiSlice.reducer,
+		[authApi.reducerPath]: authApi.reducer,
 		drawer: drawerReducer,
+		auth: authReducer
+
 	},
 	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware().concat(apiSlice.middleware),
+		getDefaultMiddleware().concat(authApi.middleware),
 	devTools: true,
 });

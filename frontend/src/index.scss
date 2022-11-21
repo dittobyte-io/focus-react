@@ -57,6 +57,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/placeholders";
 @import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 
 //bootstrap utility add,remove,modify
 
