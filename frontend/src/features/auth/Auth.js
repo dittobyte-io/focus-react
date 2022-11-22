@@ -14,16 +14,10 @@ function Auth() {
 
     const dispatch=useDispatch();
     const[loginUser, {data: loginData,error,isSuccess:loginIsSuccess,status,isError: loginIsError,error:loginError,isLoading}]= useLoginUserMutation()
-    console.log(loginData,"this is what we are passing");
     let c='bi';
     const registerHandle = () =>{
         console.log(email,password);
         loginUser({email,password});
-        console.log(loginIsError,"ye iseeor ki value hh");
-        console.log(loginError,"ye iseeor ki value hhhh");
-
-        
-
     }
  
     useEffect(() => {
@@ -39,16 +33,12 @@ function Auth() {
         console.log(loginIsError,"ye iseeor ki value h");
         dispatch(setCredentials({token:loginData.token,data:loginData.data}))
         localStorage.setItem("token",loginData.token);
-        // localStorage.setItem('userId',this.props.user_id);
-        // localStorage.setItem('orgId', this.props.org_Id);
         localStorage.setItem('firstName', loginData.data.first_name);
         localStorage.setItem('lastName', loginData.data.last_name);
-        console.log(loginData.data.first_name,"ye mera naam h")
-        return <Navigate to="/" /> 
+        // return <Navigate to="/" /> 
         // direct to the consultant dashboard
     }
-    console.log(isLoading,"ye loading hai ya nahi");
-    console.log(loginIsError,"ye error hai ya nahi");
+
     
     
 });
