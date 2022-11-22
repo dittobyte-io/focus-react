@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { response } from 'express';
 
 // Define a service using a base URL and expected endpoints
 export const authApi = createApi({
@@ -17,6 +18,5 @@ export const authApi = createApi({
   }),
 })
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
+
 export const { useLoginUserMutation } = authApi

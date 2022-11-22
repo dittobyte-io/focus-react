@@ -5,37 +5,60 @@ import {setCredentials, logOut} from "./authSlice";
 import { useDispatch,useSelector} from "react-redux";
 import { useLoginUserMutation } from "../../app/api/authApi";
 import { Link, Navigate } from 'react-router-dom';
-
+import { useEffect } from "react";
 
 function Auth() {
     const [email, setemail]=useState("");
     const [password, setpassword]=useState("");
-	const [passwordShown, setpasswordShown] = useState(false);
+    const [passwordShown, setpasswordShown] = useState(false);
 
     const dispatch=useDispatch();
-    const[loginUser, {data,isSuccess,isError,message}]= useLoginUserMutation()
-    console.log(data,"this is what we are passing");
-	let c='bi';
+    const[loginUser, {data: loginData,error,isSuccess:loginIsSuccess,status,isError: loginIsError,error:loginError,isLoading}]= useLoginUserMutation()
+    console.log(loginData,"this is what we are passing");
+    let c='bi';
     const registerHandle = () =>{
         console.log(email,password);
         loginUser({email,password});
+        console.log(loginIsError,"ye iseeor ki value hh");
+        console.log(loginError,"ye iseeor ki value hhhh");
+
+        
+
+    }
+ 
+    useEffect(() => {
+        // side-effects code here...
+        console.log(status,"ye status hai");
+        console.log(error,"ye aa rahi error hai");
+    if(loginIsError){
+        console.log("eirror che");
     }
     
-    if(isSuccess )
+    if(loginIsSuccess )
     {
-        dispatch(setCredentials({token:data.token,data:data.data}))
-        localStorage.setItem("token",data.token);
-		return <Navigate to="/" /> 
-		// direct to the consultant dashboard
+        console.log(loginIsError,"ye iseeor ki value h");
+        dispatch(setCredentials({token:loginData.token,data:loginData.data}))
+        localStorage.setItem("token",loginData.token);
+        // localStorage.setItem('userId',this.props.user_id);
+        // localStorage.setItem('orgId', this.props.org_Id);
+        localStorage.setItem('firstName', loginData.data.first_name);
+        localStorage.setItem('lastName', loginData.data.last_name);
+        console.log(loginData.data.first_name,"ye mera naam h")
+        return <Navigate to="/" /> 
+        // direct to the consultant dashboard
     }
-   
-
+    console.log(isLoading,"ye loading hai ya nahi");
+    console.log(loginIsError,"ye error hai ya nahi");
+    
+    
+});
+  
     
 
     return (
         <>
             <div id='login-box' className='card border-0'>
-				
+                
                 <div className='card-header bg-tertiary d-flex align-items-center justify-content-center'>
                     <img src={cardLogo} alt='Focus Logo' className='card-logo' />
                 </div>
@@ -85,7 +108,7 @@ function Auth() {
                                     data-password='false'
                                 > 
                                  <span  onClick={() => setpasswordShown(!passwordShown)} className={passwordShown ? c=c+' bi-eye' : c+' bi-eye-slash'} ></span> 
-									
+                                    
                                 </div>
                             </div>
                         </div>

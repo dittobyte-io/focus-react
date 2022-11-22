@@ -19,7 +19,7 @@ export const AuthSlice = createSlice({
 				state.token=token;
 				console.log(state.user,"hobe1");
 				state.message=message;
-				state.success=true;
+				// state.success=true;
 
 				localStorage.setItem('token',token);
 	},
