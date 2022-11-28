@@ -2,6 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "app/api/authApi";
 import drawerReducer from "features/ui/side-nav/drawerSlice";
 import  authReducer from "features/auth/authSlice";
+import { setupListeners } from "@reduxjs/toolkit/query";
+
 
 
 export const store = configureStore({
@@ -13,5 +15,6 @@ export const store = configureStore({
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware().concat(authApi.middleware),
-	devTools: true,
 });
+setupListeners(store.dispatch);
+

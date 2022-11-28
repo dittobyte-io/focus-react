@@ -177,15 +177,20 @@
   color: white;
 }
 
-#login-box {
-  width: 30rem;
+.login-cap {
+  padding: 15px 0 15px 0;
+  height: 90px;
 }
 
-.card-logo {
-  margin: 1rem 0;
-  height: 3.75rem;
+.no-border {
+  border: 0;
 }
 
+@media screen and (min-width: 810px) {
+  #login-box {
+    height: 85vh;
+  }
+}
 #login {
   display: flex;
   flex-direction: column;

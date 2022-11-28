@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+//RTK Query
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:8000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:8000' }),
   endpoints: (builder) => ({
     loginUser: builder.mutation({
       query: (body) => {
@@ -11,7 +12,7 @@ export const authApi = createApi({
           method: "post",
           body,
         };
-      }
+      }   
     }),
   }),
 })
