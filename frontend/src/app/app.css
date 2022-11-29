@@ -113,8 +113,6 @@
 
 .header-toolbar {
   display: flex;
-  width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
   align-items: center;
 }
@@ -177,24 +175,21 @@
   color: white;
 }
 
-.login-cap {
-  padding: 15px 0 15px 0;
-  height: 90px;
+#login-box {
+  width: 30rem;
 }
 
-.no-border {
-  border: 0;
+.card-logo {
+  margin: 1rem 0;
+  height: 3.75rem;
 }
 
-@media screen and (min-width: 810px) {
-  #login-box {
-    height: 85vh;
-  }
-}
 #login {
   display: flex;
   flex-direction: column;
   height: 100vh;
   align-items: center;
   justify-content: center;
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*# sourceMappingURL=app.css.map */
