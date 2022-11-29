@@ -4,34 +4,31 @@ import { Link } from "react-router-dom";
 
 function Login() {
 	return (
-			<>
+		<>
 			<div
-				id="login-pg"
-				className="target-bkgd default-scheme"
+				id='login'
 				style={{
-				background: `url(${loginbg}) no-repeat center center`,
-				backgroundColor: "lightslategray",
-				backgroundSize: "cover",
+					background: `url(${loginbg}) no-repeat center center`,
+					backgroundColor: "lightslategray",
+					backgroundSize: "cover",
 				}}
 			>
-				<div className="pt-2 pt-sm-5 pb-4 pb-sm-4">
-				<div className="container">
-					<Auth />
-					<div className="mt-3 row">
-					<div className="text-center col">
-						<p className="alt-text">
-						Don't have an account?
-						<a className="ms-1 alt-text" href="create-account.html">
-							<b>Sign Up</b>
-						</a>
-						</p>
-					</div>
-					</div>
+				<Auth />
+				{/* comment out the below signup link for now
+
+				<div className='text-center mt-3'>
+					<p className='text-white'>
+						Don't have an account?&nbsp;&nbsp;
+						<Link to='/signup' className='text-white'>
+							Sign up
+						</Link>
+					</p>
 				</div>
-				</div>
+
+				*/}
 			</div>
-			</>
-);
+		</>
+	);
 }
 
 export default Login;
