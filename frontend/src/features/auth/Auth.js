@@ -6,14 +6,15 @@ import { useLoginUserMutation } from "../../app/api/authApi";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
+
 function Auth() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordShown, setPasswordShown] = useState(false);
-	const [errorMessage, setErrorMessage] = useState("");
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
+	
 	const [
 		loginUser,
 		{
@@ -23,28 +24,25 @@ function Auth() {
 			error: loginError,
 		},
 	] = useLoginUserMutation();
-	let c = "bi";
-	const handleLogin = async () => {
-		loginUser({ email, password });
-		setErrorMessage("");
+	const handleLogin = async (e) => {
+		e.preventDefault();
+		loginUser({ email, password });	
 	};
+	
 
 	useEffect(() => {
 		if (isLoginSuccess) {
 			dispatch(
 				setCredentials({ token: loginData.token, data: loginData.data })
 			);
-			localStorage.setItem("token", loginData.token);
-			localStorage.setItem("firstName", loginData.data.first_name);
-			localStorage.setItem("lastName", loginData.data.last_name);
 			navigate("/"); // direct to the consultant dashboard
 		}
 
 		if (isLoginError) {
-			setErrorMessage(loginError.data.message);
-			dispatch(setCredentials({ message: loginError.data.message }));
+			dispatch(setCredentials({ message: loginError.data.message }));	
 		}
-	}, [isLoginSuccess, isLoginError, loginData, dispatch, loginError]);
+	}, [isLoginSuccess, isLoginError, loginData, loginError]);
+	
 
 	return (
 		<>
@@ -112,10 +110,9 @@ function Auth() {
 								id='rememberMe'
 							/>
 							<label
-								className='form-check-label text-muted'
+								className='form-check-label text-muted ps-1'
 								htmlFor='rememberMe'
 							>
-								&nbsp;
 								<small>Remember Me</small>
 							</label>
 						</div>
@@ -124,15 +121,39 @@ function Auth() {
 								type='submit'
 								className='btn btn-primary text-white'
 								onClick={handleLogin}
+								
 							>
 								Log In
 							</button>
+							
 						</div>
-					</form>
+					</form>		
 				</div>
 			</div>
+			
+			{
+				isLoginError === true ? (
+					<div className="position-fixed pt-5 top-0 start-50 translate-middle">
+					<div
+					className="alert alert-warning alert-dismissible fade show "
+					role="alert"
+					id="message"
+					>
+					Please enter valid credentials.
+					<button
+						type="button"
+						className="btn-close"
+						data-bs-dismiss="alert"
+						aria-label="Close"
+					></button>
+					</div>
+					</div>
+				) : null
+			}
+			
 		</>
 	);
+
 }
 
 export default Auth;
