@@ -36,7 +36,6 @@ function Auth() {
 			);
 			navigate("/"); // direct to the consultant dashboard
 		}
-
 		if (isLoginError) {
 			dispatch(setCredentials({ message: loginError.data.message }));	
 		}
