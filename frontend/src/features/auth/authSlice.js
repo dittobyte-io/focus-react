@@ -9,10 +9,6 @@ export const AuthSlice = createSlice({
 				state.token=token;
 				state.message=message;
 	},
-	logOut: (state, action) => {
-		state.user = null;
-		state.token = null;
-	},
   },
 })
 

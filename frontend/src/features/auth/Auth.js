@@ -2,7 +2,7 @@ import cardLogo from "features/ui/svgs/logo-hz-white.svg";
 import { useState } from "react";
 import { setCredentials } from "./authSlice";
 import { useDispatch } from "react-redux";
-import { useLoginUserMutation } from "../../app/api/authApi";
+import { useLoginUserMutation } from "./authApiSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -29,7 +29,6 @@ function Auth() {
 		loginUser({ email, password });	
 	};
 	
-
 	useEffect(() => {
 		if (isLoginSuccess) {
 			dispatch(
@@ -121,39 +120,32 @@ function Auth() {
 								type='submit'
 								className='btn btn-primary text-white'
 								onClick={handleLogin}
-								
 							>
 								Log In
-							</button>
-							
+							</button>	
 						</div>
 					</form>		
 				</div>
-			</div>
-			
+			</div>	
 			{
 				isLoginError === true ? (
-					<div className="position-fixed pt-5 top-0 start-50 translate-middle">
-					<div
-					className="alert alert-warning alert-dismissible fade show "
-					role="alert"
-					id="message"
-					>
-					Please enter valid credentials.
-					<button
-						type="button"
-						className="btn-close"
-						data-bs-dismiss="alert"
-						aria-label="Close"
-					></button>
+				<div
+					className="position-fixed pt-5 top-0 start-50 translate-middle">
+					<div className="alert alert-warning alert-dismissible fade show "
+						role="alert">
+					    Please enter valid credentials.
+							<button
+								type="button"
+								className="btn-close"
+								data-bs-dismiss="alert"
+								aria-label="Close"
+							></button>
 					</div>
-					</div>
+				</div>
 				) : null
-			}
-			
+			}	
 		</>
 	);
-
 }
 
 export default Auth;

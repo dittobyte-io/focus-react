@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { authApi } from "app/api/authApi";
+import { apiSlice } from "app/api/apiSlice";
 import drawerReducer from "features/ui/side-nav/drawerSlice";
 import  authReducer from "features/auth/authSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
@@ -8,13 +8,13 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 
 export const store = configureStore({
 	reducer: {
-		[authApi.reducerPath]: authApi.reducer,
+		[apiSlice.reducerPath]: apiSlice.reducer,
 		drawer: drawerReducer,
 		auth: authReducer
 
 	},
 	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware().concat(authApi.middleware),
+		getDefaultMiddleware().concat(apiSlice.middleware),
 });
 setupListeners(store.dispatch);
 
