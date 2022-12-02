@@ -1,7 +1,8 @@
+import {RegisterAccount} from"features/register-account";
 function Signup() {
 	return (
 		<>
-			<h1>Signup</h1>
+		<RegisterAccount/>
 		</>
 	);
 }

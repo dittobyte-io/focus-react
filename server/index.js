@@ -1,10 +1,9 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-const buildPath = path.join(__dirname, "..", "frontend", "build");
-
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
+const express = require("express");
+const app = express();
+const path = require("path");
+const buildPath = path.join(__dirname, "..", "frontend", "build");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

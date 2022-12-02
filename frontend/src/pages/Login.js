@@ -4,24 +4,30 @@ import { Link } from "react-router-dom";
 
 function Login() {
 	return (
-		<div
-			id='login'
-			style={{
-				background: `url(${loginbg}) no-repeat center center`,
-				backgroundColor: "lightslategray",
-				backgroundSize: "cover",
-			}}
-		>
-			<Auth />
-			<div className='text-center mt-3'>
-				<p className='text-white'>
-					Don't have an account?&nbsp;&nbsp;
-					<Link to='/signup' className='text-white'>
-						Sign up
-					</Link>
-				</p>
+		<>
+			<div
+				id='login'
+				style={{
+					background: `url(${loginbg}) no-repeat center center`,
+					backgroundColor: "lightslategray",
+					backgroundSize: "cover",
+				}}
+			>
+				<Auth />
+				{/* comment out the below signup link for now
+
+				<div className='text-center mt-3'>
+					<p className='text-white'>
+						Don't have an account?&nbsp;&nbsp;
+						<Link to='/signup' className='text-white'>
+							Sign up
+						</Link>
+					</p>
+				</div>
+
+				*/}
 			</div>
-		</div>
+		</>
 	);
 }
 

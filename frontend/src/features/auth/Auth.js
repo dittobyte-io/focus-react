@@ -1,6 +1,47 @@
 import cardLogo from "features/ui/svgs/logo-hz-white.svg";
+import { useState } from "react";
+import { setCredentials } from "./authSlice";
+import { useDispatch } from "react-redux";
+import { useLoginUserMutation } from "./authApiSlice";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 
 function Auth() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [passwordShown, setPasswordShown] = useState(false);
+	const navigate = useNavigate();
+
+	const dispatch = useDispatch();
+	
+	const [
+		loginUser,
+		{
+			data: loginData,
+			isSuccess: isLoginSuccess,
+			isError: isLoginError,
+			error: loginError,
+		},
+	] = useLoginUserMutation();
+	const handleLogin = async (e) => {
+		e.preventDefault();
+		loginUser({ email, password });	
+	};
+	
+	useEffect(() => {
+		if (isLoginSuccess) {
+			dispatch(
+				setCredentials({ token: loginData.token, data: loginData.data })
+			);
+			navigate("/"); // direct to the consultant dashboard
+		}
+		if (isLoginError) {
+			dispatch(setCredentials({ message: loginError.data.message }));	
+		}
+	}, [isLoginSuccess, isLoginError, loginData, loginError]);
+	
+
 	return (
 		<>
 			<div id='login-box' className='card border-0'>
@@ -26,6 +67,8 @@ function Auth() {
 								type='text'
 								id='username'
 								className='form-control'
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 						</div>
 						<div className='mb-3'>
@@ -40,15 +83,20 @@ function Auth() {
 									placeholder='Enter your password'
 									name='password'
 									autoComplete='password'
-									type='password'
+									type={passwordShown ? "text" : "password"}
 									id='password'
 									className='form-control'
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
 								/>
 								<div
 									className='input-group-text input-group-password'
 									data-password='false'
 								>
-									<span className='bi bi-eye-slash'></span>
+									<span
+										onClick={() => setPasswordShown(!passwordShown)}
+										className={passwordShown ? "bi bi-eye" : "bi bi-eye-slash"}
+									></span>
 								</div>
 							</div>
 						</div>
@@ -60,24 +108,43 @@ function Auth() {
 								id='rememberMe'
 							/>
 							<label
-								className='form-check-label text-muted'
+								className='form-check-label text-muted ps-1'
 								htmlFor='rememberMe'
 							>
-								&nbsp;
 								<small>Remember Me</small>
 							</label>
 						</div>
 						<div className='mb-3 mb-0 text-center'>
-							<button type='submit' className='btn btn-primary text-white'>
+							<button
+								type='submit'
+								className='btn btn-primary text-white'
+								onClick={handleLogin}
+							>
 								Log In
-							</button>
+							</button>	
 						</div>
-					</form>
+					</form>		
 				</div>
-			</div>
+			</div>	
+			{
+				isLoginError === true ? (
+				<div
+					className="position-fixed pt-5 top-0 start-50 translate-middle">
+					<div className="alert alert-warning alert-dismissible fade show "
+						role="alert">
+					    Please enter valid credentials.
+							<button
+								type="button"
+								className="btn-close"
+								data-bs-dismiss="alert"
+								aria-label="Close"
+							></button>
+					</div>
+				</div>
+				) : null
+			}	
 		</>
 	);
 }
 
 export default Auth;
-//TODO: Add RTK-Query and icon for show/hide password
