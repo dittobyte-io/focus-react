@@ -26,7 +26,10 @@ frontend/build
 .env.development.local
 .env.test.local
 .env.production.local
+frontend/src/index.css.map
+frontend/src/app/app.css.map
 
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
