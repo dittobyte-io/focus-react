@@ -6,7 +6,6 @@ import { useLoginUserMutation } from "./authApiSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-
 function Auth() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -14,7 +13,7 @@ function Auth() {
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
-	
+
 	const [
 		loginUser,
 		{
@@ -26,9 +25,9 @@ function Auth() {
 	] = useLoginUserMutation();
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		loginUser({ email, password });	
+		loginUser({ email, password });
 	};
-	
+
 	useEffect(() => {
 		if (isLoginSuccess) {
 			dispatch(
@@ -37,10 +36,9 @@ function Auth() {
 			navigate("/"); // direct to the consultant dashboard
 		}
 		if (isLoginError) {
-			dispatch(setCredentials({ message: loginError.data.message }));	
+			dispatch(setCredentials({ message: loginError.data.message }));
 		}
 	}, [isLoginSuccess, isLoginError, loginData, loginError]);
-	
 
 	return (
 		<>
@@ -75,7 +73,7 @@ function Auth() {
 							<label htmlFor='password' className='form-label'>
 								Password
 							</label>
-							<a className='text-muted float-end' href='forgot-password.html'>
+							<a className='text-muted float-end' href='#'>
 								<small>Forgot your password?</small>
 							</a>
 							<div className='mb-0 input-group'>
@@ -121,28 +119,27 @@ function Auth() {
 								onClick={handleLogin}
 							>
 								Log In
-							</button>	
+							</button>
 						</div>
-					</form>		
+					</form>
 				</div>
-			</div>	
-			{
-				isLoginError === true ? (
-				<div
-					className="position-fixed pt-5 top-0 start-50 translate-middle">
-					<div className="alert alert-warning alert-dismissible fade show "
-						role="alert">
-					    Please enter valid credentials.
-							<button
-								type="button"
-								className="btn-close"
-								data-bs-dismiss="alert"
-								aria-label="Close"
-							></button>
+			</div>
+			{isLoginError === true ? (
+				<div className='position-fixed pt-5 top-0 start-50 translate-middle'>
+					<div
+						className='alert alert-warning alert-dismissible fade show '
+						role='alert'
+					>
+						Please enter valid credentials.
+						<button
+							type='button'
+							className='btn-close'
+							data-bs-dismiss='alert'
+							aria-label='Close'
+						></button>
 					</div>
 				</div>
-				) : null
-			}	
+			) : null}
 		</>
 	);
 }
