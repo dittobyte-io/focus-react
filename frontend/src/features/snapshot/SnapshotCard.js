@@ -17,7 +17,7 @@ export const data = {
 
 const SnapshotCard = (props) => {
 	return (
-		<div className='col-3 d-flex'>
+		<div className='col-md-3 d-flex'>
 			<div className='card equal-height'>
 				<div className='card-body'>
 					<h6>{props.title}</h6>
