@@ -25,7 +25,7 @@ function Dashboard() {
 			</div>
 			<div className='row py2'>
 				<div className='col'>
-					
+					<NewsWidget />
 				</div>
 				<div className='col'></div>
 				<div className='col'></div>
