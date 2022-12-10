@@ -2,23 +2,8 @@ import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip);
-/*
-export const data = {
-	labels: ["Done", "To-do", "In Progress"],
-	datasets: [
-		{
-			data: [12, 19, 3],
-			backgroundColor: ["#a9c8c0", "#dc9396", "#e8d495"],
-			borderColor: ["rgba(255, 255, 255, 1)"],
-			borderWidth: 2,
-		},
-	],
-};
-*/
+
 const SnapshotCard = (props) => {
-	console.log('SnapShot')
-	console.log(props)
-	
 	const data = {
 		labels: props.labels,
 		datasets: [

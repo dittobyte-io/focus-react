@@ -25,8 +25,8 @@ const InitiativesSnapshot = () => {
 		content = { data: [0.1], labels: ["Loading"] };
 	} else if (isError) {
 		content.labels = ["ERROR"];
-		content.data = [0];
-		console.log(error);
+		content.data = [0.1];
+		content.quanity = 0;
 	} else {
 		var results = parseResults(data[0].data);
 		content.labels = results.map((a) => a.key);

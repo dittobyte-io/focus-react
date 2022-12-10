@@ -25,7 +25,8 @@ const GoalsSnapshot = () => {
 		content = { data: [0.1], labels: ["Loading"] };
 	} else if (isError) {
 		content.labels = ["ERROR"];
-		content.data = [0];
+		content.data = [0.1];
+		content.quanity = 0;
     console.log(error)
     
 	}
