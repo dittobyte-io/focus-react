@@ -9,7 +9,8 @@ const SnapshotCard = (props) => {
 		datasets: [
 			{
 				data: props.data,
-				backgroundColor: ["#a9c8c0", "#dc9396", "#e8d495"],
+				backgroundColor:
+					props.data < 1 ? ["#F8F8F8"] : ["#a9c8c0", "#dc9396", "#e8d495"],
 				borderColor: ["rgba(255, 255, 255, 1)"],
 				borderWidth: props.data === 0 ? 2 : 0,
 			},

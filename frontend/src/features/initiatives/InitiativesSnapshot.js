@@ -25,7 +25,7 @@ const InitiativesSnapshot = () => {
 		content = { data: [0.1], labels: ["Loading"] };
 	} else if (isError) {
 		content.labels = ["ERROR"];
-		content.data = [0.1];
+		content.data = [0.00001]; // set to value not equal to Zero so a chart can be rendered
 		content.quanity = 0;
 	} else {
 		var results = parseResults(data[0].data);

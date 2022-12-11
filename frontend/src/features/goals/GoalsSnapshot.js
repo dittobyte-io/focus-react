@@ -17,24 +17,22 @@ function parseResults(array) {
 
 const GoalsSnapshot = () => {
 	let content = {};
-	let consultantId = 1 // Currently the auth data only stores the email address not the user id
-	const { data, isLoading, isError, error, isSuccess } = useGetConsultantGoalsQuery(consultantId);
+	let consultantId = 1; // Currently the auth data only stores the email address not the user id
+	const { data, isLoading, isError, error, isSuccess } =
+		useGetConsultantGoalsQuery(consultantId);
 
-  
 	if (isLoading) {
 		content = { data: [0.1], labels: ["Loading"] };
 	} else if (isError) {
 		content.labels = ["ERROR"];
-		content.data = [0.1];
+		content.data = [0.00001]; // set to value not equal to Zero so a chart can be rendered
 		content.quanity = 0;
-    console.log(error)
-    
-	}
-  else {
+		console.log(error);
+	} else {
 		var results = parseResults(data[0].data);
 		content.labels = results.map((a) => a.key);
 		content.data = results.map((a) => a.value);
-    content.quanity = (content.data).reduce((a,b) => a + b, 0)
+		content.quanity = content.data.reduce((a, b) => a + b, 0);
 	}
 
 	return (
