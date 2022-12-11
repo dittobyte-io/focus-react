@@ -11,13 +11,13 @@ const SnapshotCard = (props) => {
 				data: props.data,
 				backgroundColor: ["#a9c8c0", "#dc9396", "#e8d495"],
 				borderColor: ["rgba(255, 255, 255, 1)"],
-				borderWidth: props.data === 0? 2 : 0,
+				borderWidth: props.data === 0 ? 2 : 0,
 			},
 		],
 	};
 
 	return (
-		<div className='col-md-3 d-flex'>
+		<>
 			<div className='card equal-height'>
 				<div className='card-body'>
 					<h6>{props.title}</h6>
@@ -35,13 +35,15 @@ const SnapshotCard = (props) => {
 						<div className='col-6 d-flex flex-column align-items-center'>
 							<h6 className='total-title'>Quantity</h6>
 							<p className='total-body'>
-								{props.quanity < 10 ? ("0" + props.quanity).slice(-2) : props.quanity}
+								{props.quanity < 10
+									? ("0" + props.quanity).slice(-2)
+									: props.quanity}
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

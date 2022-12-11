@@ -113,8 +113,6 @@
 
 .header-toolbar {
   display: flex;
-  width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
   align-items: center;
 }
@@ -238,4 +236,6 @@ span.small, p.small {
   height: 100vh;
   align-items: center;
   justify-content: center;
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*# sourceMappingURL=app.css.map */

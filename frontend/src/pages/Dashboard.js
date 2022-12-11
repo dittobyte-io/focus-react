@@ -7,28 +7,27 @@ function Dashboard() {
 	return (
 		<>
 			<div className='container g-4 py-2'>
-				<div className='row'>
-					<div className='col-12'>
-						<div className='row py-2'>
-							<div className='col'>
-								<GoalsSnapshot />
-							</div>
-							<div className='col'>
-								<ImpactsSnapshot />
-							</div>
-							<div className='col'>
-								<InitiativesSnapshot />
-							</div>
-						</div>
+				<div className='row py-2'>
+					<div className='col'>
+						<GoalsSnapshot />
+					</div>
+					<div className='col'>
+						<ImpactsSnapshot />
+					</div>
+					<div className='col'>
+						<InitiativesSnapshot />
+					</div>
+					<div className='col'>
+						<h3>Focus Score</h3>
 					</div>
 				</div>
-			</div>
-			<div className='row py2'>
-				<div className='col'>
-					<NewsWidget />
+				<div className='row py2'>
+					<div className='col'>
+						<NewsWidget />
+					</div>
+					<div className='col'></div>
+					<div className='col'></div>
 				</div>
-				<div className='col'></div>
-				<div className='col'></div>
 			</div>
 		</>
 	);
