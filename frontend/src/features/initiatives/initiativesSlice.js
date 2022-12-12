@@ -3,28 +3,28 @@ import { apiSlice } from "app/api";
 const initiativesSlice = apiSlice.injectEndpoints({
 	endpoints: (builder) => ({
 		getInitiatives: builder.query({
-			query: (initiativeId) => "/initiatives/${initiativeId}",
+			query: (initiativeId) => `/initiatives/${initiativeId}`,
 		}),
 		getConsultantInitiatives: builder.query({
 			query: (ownerConsultantId) =>
-				"/initiatives/intiative_consultant/${ownerConsultantId}",
+				`/initiatives/intiative_consultant/${ownerConsultantId}`,
 		}),
 		getCustomerInitiatives: builder.query({
 			query: (ownerCustomerId) =>
-				"/initiatives/initiative_customer/${ownerCustomerId}",
+				`/initiatives/initiative_customer/${ownerCustomerId}`,
 		}),
 		getAccountInitiatives: builder.query({
-			query: (accountId) => "/intiatives/initiative_account/${accountId}",
+			query: (accountId) => `/intiatives/initiative_account/${accountId}`,
 		}),
 		getVendorInitiatives: builder.query({
 			query: (vendorAccountId) =>
-				"/initiatives/initiative_vendor/${vendorAccountId}",
+				`/initiatives/initiative_vendor/${vendorAccountId}`,
 		}),
 		getGoalInitiatives: builder.query({
-			query: (goalId) => "/initiatives/initiative_goal/${goalId}",
+			query: (goalId) => `/initiatives/initiative_goal/${goalId}`,
 		}),
 		getInitiativesByStage: builder.query({
-			query: (userId) => "/intiatives/initiativeliststage/${userId}",
+			query: (userId) => `/intiatives/initiativeliststage/${userId}`,
 		}),
 		overrideExisting: false,
 	}),

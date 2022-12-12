@@ -3,7 +3,7 @@ import { useGetConsultantGoalsQuery } from "./goalsSlice";
 
 // Move to a Helper function
 function parseResults(array) {
-	var r = [],
+	let r = [],
 		o = {};
 	array.forEach(function (goal) {
 		if (!o[goal.stage]) {
@@ -18,7 +18,7 @@ function parseResults(array) {
 const GoalsSnapshot = () => {
 	let content = {};
 	let consultantId = 1; // Currently the auth data only stores the email address not the user id
-	const { data, isLoading, isError, error, isSuccess } =
+	const { data, isLoading, isError, error } =
 		useGetConsultantGoalsQuery(consultantId);
 
 	if (isLoading) {
@@ -29,7 +29,7 @@ const GoalsSnapshot = () => {
 		content.quanity = 0;
 		console.log(error);
 	} else {
-		var results = parseResults(data[0].data);
+		let results = parseResults(data[0].data);
 		content.labels = results.map((a) => a.key);
 		content.data = results.map((a) => a.value);
 		content.quanity = content.data.reduce((a, b) => a + b, 0);
