@@ -24,7 +24,7 @@ const ImpactsSnapshot = () => {
 	if (isLoading) {
 		content = { data: [0.1], labels: ["Loading"] };
 	} else if (isError) {
-		content.labels = ["ERROR"];
+		content.labels = ["NO DATA"];
 		content.data = [0.00001]; // set to value not equal to Zero so a chart can be rendered
 		content.quanity = 0;
 	} else {
