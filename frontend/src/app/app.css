@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 .grid-container {
   display: grid;
   grid: "sidenav header" 4rem "sidenav body" 1fr/min-content 1fr;
