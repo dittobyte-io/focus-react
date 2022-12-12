@@ -1,4 +1,4 @@
-import { SnapshotCard } from "components/snapshot";
+import { Snapshot } from "components/snapshot";
 import { useGetConsultantGoalsQuery } from "./goalsSlice";
 
 // Move to a Helper function
@@ -37,7 +37,7 @@ const GoalsSnapshot = () => {
 
 	return (
 		<>
-			<SnapshotCard
+			<Snapshot
 				title='Goals'
 				quanity={content.quanity}
 				data={content.data}
