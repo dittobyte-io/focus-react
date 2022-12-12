@@ -6,8 +6,8 @@ import { InitiativesSnapshot } from "features/initiatives";
 function Dashboard() {
 	return (
 		<>
-			<div className='container g-4 py-2'>
-				<div className='row py-2'>
+			<div className='container g-4'>
+				<div className='row pb-2'>
 					<div className='col'>
 						<GoalsSnapshot />
 					</div>
