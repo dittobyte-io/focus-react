@@ -1,11 +1,25 @@
 import { NewsWidget } from "features/news";
+import { GoalsSnapshot } from "features/goals";
+import { ImpactsSnapshot } from "features/impacts";
+import { InitiativesSnapshot } from "features/initiatives";
 
 function Dashboard() {
 	return (
 		<>
 			<div className='container g-4 py-2'>
 				<div className='row py-2'>
-					<h3>row one snap shots placeholder</h3>
+					<div className='col'>
+						<GoalsSnapshot />
+					</div>
+					<div className='col'>
+						<ImpactsSnapshot />
+					</div>
+					<div className='col'>
+						<InitiativesSnapshot />
+					</div>
+					<div className='col'>
+						<span>Focus Score</span>
+					</div>
 				</div>
 				<div className='row py2'>
 					<div className='col'>
