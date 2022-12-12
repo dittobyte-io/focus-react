@@ -21,7 +21,7 @@ function Dashboard() {
 						<span>Focus Score</span>
 					</div>
 				</div>
-				<div className='row py2'>
+				<div className='row py-2'>
 					<div className='col'>
 						<NewsWidget />
 					</div>
