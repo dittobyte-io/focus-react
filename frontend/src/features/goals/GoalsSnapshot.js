@@ -1,4 +1,4 @@
-import { Snapshot } from "components/snapshot";
+import { Snapshot } from "components";
 import { useGetConsultantGoalsQuery } from "./goalsSlice";
 
 // Move to a Helper function

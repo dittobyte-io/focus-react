@@ -1,4 +1,4 @@
-import { SnapshotCard } from "components/snapshot";
+import { Snapshot } from "components";
 import { useGetConsultantImpactsQuery } from "./impactsSlice";
 
 // Move to a Helper function
@@ -35,7 +35,7 @@ const ImpactsSnapshot = () => {
 	}
 	return (
 		<>
-			<SnapshotCard
+			<Snapshot
 				title='Impacts'
 				quanity={content.quanity}
 				data={content.data}
