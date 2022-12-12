@@ -12,10 +12,10 @@ function Dashboard() {
 						<GoalsSnapshot />
 					</div>
 					<div className='col'>
-						<ImpactsSnapshot />
+						<InitiativesSnapshot />
 					</div>
 					<div className='col'>
-						<InitiativesSnapshot />
+						<ImpactsSnapshot />
 					</div>
 					<div className='col'>
 						<span>Focus Score</span>
