@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 .grid-container {
   display: grid;
   grid: "sidenav header" 4rem "sidenav body" 1fr/min-content 1fr;
@@ -211,6 +212,23 @@ span.small, p.small {
   font-size: 0.75em;
   line-height: 1em;
   margin-bottom: 0;
+}
+
+.total-title {
+  margin-bottom: 0;
+  color: #40393e;
+}
+
+.total-body {
+  font-family: "Roboto", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  margin-top: -15px;
+  color: #9ac8ea;
+}
+
+.equal-height {
+  flex: 1;
 }
 
 #login {
