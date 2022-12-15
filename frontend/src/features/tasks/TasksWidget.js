@@ -12,7 +12,7 @@ function TasksWidget() {
 							data-bs-original-title='Click &amp; Drag'
 							aria-label='Click &amp; Drag'
 						></i>
-						<span>News Feed</span>
+						<span>Tasks</span>
 					</div>
 					<div className='btn-group' role='group'>
 						<div className='dropdown'>
@@ -57,7 +57,7 @@ function TasksWidget() {
 					</div>
 				</div>
 				<div className='card-body'>
-					<NewsList />
+					<TasksList />
 				</div>
 			</div>
 		</>

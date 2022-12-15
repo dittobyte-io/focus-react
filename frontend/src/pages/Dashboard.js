@@ -2,6 +2,7 @@ import { NewsWidget } from "features/news";
 import { GoalsSnapshot } from "features/goals";
 import { ImpactsSnapshot } from "features/impacts";
 import { InitiativesSnapshot } from "features/initiatives";
+import TasksWidget from "features/tasks/TasksWidget";
 
 function Dashboard() {
 	return (
@@ -25,7 +26,9 @@ function Dashboard() {
 					<div className='col'>
 						<NewsWidget />
 					</div>
-					<div className='col'></div>
+					<div className='col'>
+						<TasksWidget />
+					</div>
 					<div className='col'></div>
 				</div>
 			</div>
