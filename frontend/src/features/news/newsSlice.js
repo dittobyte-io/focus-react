@@ -1,11 +1,14 @@
-import { apiSlice } from "app/api";
+import { createSlice } from "@reduxjs/toolkit";
 
-export const newsApiSlice = apiSlice.injectEndpoints({
-	endpoints: (builder) => ({
-		getNews: builder.query({
-			query: () => "/whateverTheRealOneIs",
-		}),
-	}),
+export const NewsSlice = createSlice({
+	name: "newsFeed",
+	initialState: {  },
+	reducers: {
+		
+	},
 });
 
-export const { useGetNewsQuery } = newsApiSlice;
+// Action creators will be generated for each reducer function
+export const {  } = NewsSlice.actions;
+
+export default NewsSlice.reducer;

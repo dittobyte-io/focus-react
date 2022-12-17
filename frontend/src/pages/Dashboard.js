@@ -1,7 +1,8 @@
-import { NewsWidget } from "features/news";
 import { GoalsSnapshot } from "features/goals";
 import { ImpactsSnapshot } from "features/impacts";
 import { InitiativesSnapshot } from "features/initiatives";
+import { NewsWidget } from "features/news";
+
 
 function Dashboard() {
 	return (
