@@ -114,6 +114,8 @@
 
 .header-toolbar {
   display: flex;
+  width: -webkit-min-content;
+  width: -moz-min-content;
   width: min-content;
   align-items: center;
 }
@@ -214,6 +216,11 @@ span.small, p.small {
   margin-bottom: 0;
 }
 
+.taskItem input[type=checkbox]:checked + label {
+  opacity: 0.8;
+  text-decoration: line-through;
+}
+
 .total-title {
   margin-bottom: 0;
   color: #40393e;
@@ -237,6 +244,4 @@ span.small, p.small {
   height: 100vh;
   align-items: center;
   justify-content: center;
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

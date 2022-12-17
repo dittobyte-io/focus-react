@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 function TaskItem(props) {
-	const [checked, setChecked] = React.useState(false);
+	const [checked, setChecked] = useState(false);
 
 	const handleChange = () => {
 		setChecked(!checked);
 	};
 
 	return (
-		<div className='list-group-item d-flex align-items-start'>
+		<div className='list-group-item d-flex align-items-start pb-2'>
 			<div className='flex-grow-1'>
-				<div className='d-flex justify-content-between align-items-start'>
+				<div className='d-flex align-items-start form-check' class='taskItem'>
 					<input
 						class='form-check-input'
 						type='checkbox'
@@ -18,7 +20,9 @@ function TaskItem(props) {
 						onChange={handleChange}
 					/>
 					<label class='form-check-label' for='flexCheckDefault'>
-						{props.taskTitle}
+						<p className='d-inline-block ms-3 d-block mb-0 small'>
+							{props.task}
+						</p>
 					</label>
 				</div>
 			</div>

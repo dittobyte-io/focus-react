@@ -4,6 +4,8 @@
 @use "../features/search/search";
 @use "../features/auth/auth";
 @use "../features/news/news";
+
+@use "../features/tasks/tasks";
 @use "../components/snapshot/snapshot";
 
 //keep pages last

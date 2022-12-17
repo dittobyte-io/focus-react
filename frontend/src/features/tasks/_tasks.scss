@@ -1,0 +1,4 @@
+.taskItem input[type="checkbox"]:checked + label {
+	opacity: .8;
+	text-decoration: line-through;
+}

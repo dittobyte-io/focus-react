@@ -1,4 +1,16 @@
+import TaskList from "./TaskList";
+import { useGetMyTasksQuery, useUpdateTaskMutation } from "./tasksSlice";
+
 function TasksWidget() {
+	let consultantId = 1; // Currently the auth data only stores the email address not the user id
+	const {
+		data: myTask,
+		isLoading,
+		isError,
+		error,
+	} = useGetMyTasksQuery(consultantId);
+
+	const {} = useUpdateTaskMutation();
 	return (
 		<>
 			<div className='card dashboard-widget'>
@@ -38,7 +50,7 @@ function TasksWidget() {
 								</li>
 								<li>
 									<a className='dropdown-item' href='#'>
-										Newsboard
+										Taskboard
 									</a>
 								</li>
 								<hr className='dropdown-divider'></hr>
@@ -57,7 +69,7 @@ function TasksWidget() {
 					</div>
 				</div>
 				<div className='card-body'>
-					<TasksList />
+					<TaskList />
 				</div>
 			</div>
 		</>
