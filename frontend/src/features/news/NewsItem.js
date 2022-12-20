@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 // pass in the news item object from newsList.js map
-function NewsItem() {
+function NewsItem(props) {
+	
 	return (
 		<>
 			<div className='list-group-item d-flex align-items-start'>
@@ -11,13 +12,12 @@ function NewsItem() {
 							to={"news/#"}
 							className='news-title d-block mb-0 text-primary text-decoration-none'
 						>
-							New Consultant Added
+							{props.title}
 						</Link>
-						<p className='text-muted small news-date-time'>11:48 AM</p>
+						<p className='text-muted small news-date-time'>{props.date}</p>
 					</div>
 					<p className='text-muted small'>
-						Consultant Donna Noble has left the library. Donna Noble has been
-						saved.
+						{props.comment}
 					</p>
 				</div>
 			</div>
